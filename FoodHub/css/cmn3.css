@@ -1,0 +1,32 @@
+footer {
+       padding: 1em;
+       color: white;
+       background-color: black;
+       clear: left;
+       text-align: center;
+     }
+ul {
+     font-size: 20px;
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: black;
+   }
+li {
+    float: left;
+   }
+li a {
+       display: block;
+       color: white;
+       text-align: center;
+       padding: 16px;
+       text-decoration: none;
+     }
+li a:hover {
+        background-color: green;
+      }
+body{
+    background-image:url("/wt_pro_1/images/slider4.jpg");
+    background-size:cover;
+   }

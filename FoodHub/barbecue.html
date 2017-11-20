@@ -1,0 +1,55 @@
+<html>
+<head>
+  <title>Booking</title>
+  <link rel="stylesheet" type="text/css" href="css/cmn3.css"/>
+  <link rel="stylesheet" type="text/css" href="css/items.css"/>
+</head>
+<body style="background-color:grey;">
+<diV>
+  <ul>
+    <div>
+      <li><a href ="login.html">Food Menu</a></li>
+    <li><a href="login.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+      <li style="float:right;"><a href="login.html">Log In</a></li>
+      <li><a href="faq.html">Faq's</a></li>
+      <li><a href="login.html">Track</a></li>
+      <a href="index.html"><li style="padding-left:30px;padding-right:50px;font-size:50px;"><strong><span style="color:cyan;">Food</span><span style="color:#ff6600;">Hub</span></strong></li></a>
+    </div>
+
+      <div style="padding-left:100px;">
+        <li><a href="https://www.facebook.com/Askbook-699887716878821/"><img src="images/facebook.png" title="facebook" /></a></li>
+        <li><a href="https://www.twitter.com"><img src="images/twitter.png" title="twitter" /></a></li>
+        <li ><a href="https://plus.google.com/100118310135288745298"><img src="images/google.png" title="google pluse" /></a></li>
+    </div>
+  </ul>
+</div>
+</div>
+
+  <h1 style=" color:white;">place your order Here</h1>
+<div class="polaroid">
+  <img src="images/barbecue.jpg" alt="Norway" style="width:100%">
+  <!-- <div class="container"> -->
+
+    <!-- <pre style="font-size:25px;">
+Barbecue
+price: 16$</pre></div> -->
+<div id="k001">
+  <form action="address.php" method="POST">
+    Item Name:<br>
+    <input type="radio" name="item" value="Barbecue">Barbecue<br>
+    Item Price:<br>
+    <input type="radio" name="price" value="16">16$<br>
+    <label>Enter Your Location</label><br><br>
+    <input type="text" id="fname" name="location" placeholder="Location"><br>
+    <label>Enter Your Area</label><br><br>
+    <input type="text" id="lname" name="area" placeholder="Area"><br>
+    <label>Pincode</label><br><br>
+    <input type="number" id="lname" name="pincode" placeholder="pincode">
+    <input type="submit" value="Fetch fare & order">
+  </form>
+</div>
+</div>
+<footer>Copyright &copy; FoodHub.com</footer>
+</body>
+</html>

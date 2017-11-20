@@ -1,0 +1,119 @@
+<html>
+<head>
+  <title>Track</title>
+  <link rel="stylesheet" type="text/css"href="css/track.css"/>
+  <link rel="stylesheet" type="text/css" href="css/cmn3.css">
+</head>
+<body style="background-color:grey">
+<ul >
+    <div>
+    <li><a href ="food_menu.html">Food Menu</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+    <li style="float:right;"><a href="logout.php">Logout</a></li>
+    <li><a href="faq.html">Faq's</a></li>
+    <li><a href="track.html">Track</a></li>
+    <a href="index1.html"><li style="padding-left:30px;padding-right:50px;font-size:50px;"><strong><span style="color:cyan;">Food</span><span style="color:#ff6600;">Hub</span></strong></li></a>
+    </div>
+      <div style="padding-left:100px;">
+        <li><a href="#facebook.html"><img src="images/facebook.png" title="facebook" /></a></li>
+        <li><a href="#twitter.html"><img src="images/twitter.png" title="twitter" /></a></li>
+        <li ><a href="#google.html"><img src="images/google.png" title="google pluse" /></a></li>
+    </div>
+  </ul>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script type="text/javascript">
+        var source, destination;
+        var directionsDisplay;
+        var directionsService = new google.maps.DirectionsService();
+        google.maps.event.addDomListener(window, 'load', function () {
+            new google.maps.places.SearchBox(document.getElementById('txtSource'));
+            new google.maps.places.SearchBox(document.getElementById('txtDestination'));
+            directionsDisplay = new google.maps.DirectionsRenderer({ 'draggable': true });
+        });
+
+        function GetRoute() {
+            //var padmanabhanagara = new google.maps.LatLng(18.9750, 72.8258);
+            var mapOptions = {
+                zoom: 7,
+              //  center: mumbai
+            };
+            map = new google.maps.Map(document.getElementById('dvMap'), mapOptions);
+            directionsDisplay.setMap(map);
+            directionsDisplay.setPanel(document.getElementById('dvPanel'));
+
+            //*********DIRECTIONS AND ROUTE**********************//
+            source = document.getElementById("txtSource").value;
+            destination = document.getElementById("txtDestination").value;
+
+            var request = {
+                origin: source,
+                destination: destination,
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+            directionsService.route(request, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                }
+            });
+
+            //*********DISTANCE AND DURATION**********************//
+            var service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix({
+                origins: [source],
+                destinations: [destination],
+                travelMode: google.maps.TravelMode.DRIVING,
+                unitSystem: google.maps.UnitSystem.METRIC,
+                avoidHighways: false,
+                avoidTolls: false
+            }, function (response, status) {
+                if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
+                    var distance = response.rows[0].elements[0].distance.text;
+                    var duration = response.rows[0].elements[0].duration.text;
+                    var dvDistance = document.getElementById("dvDistance");
+                    dvDistance.innerHTML = "";
+                    dvDistance.innerHTML += "Distance: " + distance + "<br />";
+                    dvDistance.innerHTML += "Duration:" + duration;
+
+                } else {
+                    alert("Unable to find the distance via road.");
+                }
+            });
+        }
+
+</script>
+    <div class="map">
+    <table border="0" cellpadding="0" cellspacing="3">
+        <tr>
+            <td colspan="2">
+                Source:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="txtSource" value="PES UNIVERSITY" style="width: 200px;height:30px;"  placeholder="source" disabled/><br><br>
+                 Destination:
+              <input type="text" id="txtDestination"  style="width: 200px;height:30px;" placeholder="Destination" autofocus /><br>
+                <br />
+                <input type="button" value="Get Route" onclick="GetRoute()" />
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="dvDistance">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="dvMap" style="width: 500px; height: 500px">
+                </div>
+            </td>
+            <td>
+                <div id="dvPanel" style="width: 500px; height: 500px">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br />
+  </div>
+<footer>Copyright &copy; FoodHub.com</footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<head>
+  <link src=".png" rel="icon">
+  <title>FoodHub</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+<body style="background-color:grey;">
+<ul>
+    <div>
+    <li><a href ="login.html">Food Menu</a></li>
+    <li><a href="login.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+    <li style="float:right;"><a href="login.html">Log In</a></li>
+    <li><a href="faq.html">Faq's</a></li>
+    <li><a href="login.html">Track</a></li>
+    <a href="index.html"><li style="padding-left:30px;padding-right:50px;font-size:50px;"><strong><span style="color:cyan;">Food</span><span style="color:#ff6600;">Hub</span></strong></li></a>
+    </div>
+
+    <div style="padding-left:100px;">
+    <li><a href="https://www.facebook.com/Askbook-699887716878821/"><img src="images/facebook.png" title="facebook" /></a></li>
+    <li><a href="https://www.twitter.com"><img src="images/twitter.png" title="twitter" /></a></li>
+    <li ><a href="https://plus.google.com/100118310135288745298"><img src="images/google.png" title="google pluse" /></a></li>
+    </div>
+  </ul>
+    <div>
+    <div><img class="mySlides" src="images/slider1.jpg"></div>
+    <div><img class="mySlides" src="images/slider2.jpg"></div>
+    <div><img  class="mySlides" src="images/slider3.jpg"></div>
+    <div><img class="mySlides" src="images/slider4.jpg"></div>
+    </div>
+<script>
+       var myIndex = 0;
+       slideshow();
+function slideshow()
+{
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++)
+    {
+        x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(slideshow, 1500);
+}
+</script>
+<footer>Copyright &copy; FoodHub.com</footer>
+</body>
+</html>

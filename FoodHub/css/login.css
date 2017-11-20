@@ -1,0 +1,52 @@
+#one
+   {
+     margin-top: 55px;
+     color: red;
+     text-align:right;
+     margin-right: 100px;
+     text-shadow: 2px 2px #ff00ff;
+   }
+.inpt
+   {
+     color:blue;
+     font-size: 20px;
+     height: 45px;
+     width:370px;
+     padding-left: 7px;
+     margin-left:75px;
+     margin-top:24px;
+   }
+#id01{
+      font-size: 30px;
+      padding-left: 90px;
+      padding-bottom: 37px;
+      color:red;
+  }
+#id02{
+    opacity: 0.8;
+    margin-left:  300px;
+    margin-right: 200px;
+    background-image: url("/wt_pro_1/images/slider1.jpg");
+    margin-top: 110px;
+    margin-bottom: 140px;
+  }
+#div1{
+       padding-top: 0px;
+       padding-left: 5px;
+       margin-right: 300px;
+   }
+#btn
+   {
+     margin-left:195px;
+     margin-top: 30px;
+     width:110px;
+     height:40px;
+     font-size: 27px;
+     background-color:skyblue;
+   }
+#h1
+   {
+     color:red;
+     padding-left: 170px;
+     font-size: 35px;
+   }
